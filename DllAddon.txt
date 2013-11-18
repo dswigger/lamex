@@ -1,0 +1,65 @@
+-If you want to add new distros of lame and try them out here are the steps:
+
+1: convert the blade encdll.h and .c so that none of the functions are exported
+2: get rid of blade.c's dll entry function
+3: add this function
+
+BE_ERR	beInitStreamWDirectParams(int ArgC,char** argv, PDWORD dwSamples, PDWORD dwBufferSize, PHBE_STREAM phbeStream)
+{
+	
+	int			i;
+//	BE_CONFIG	lameConfig;
+	layer*		pInfo = NULL;
+
+	// Clear the external and local paramters
+	InitParams();
+
+	// Not used, always assign stream 1
+	*phbeStream=1;
+
+	// Set MP3 buffer size
+	*dwBufferSize=BUFFER_SIZE*2;
+
+	// Set the encoder variables
+	lame_parse_args(ArgC,argv);
+
+	// Set pointer to fr_ps header
+	pInfo = fr_ps.header;
+
+	// Set private bit?
+	pInfo->extension = FALSE;
+
+	//hdr_to_frps(&fr_ps);  /* now called in parse_args */
+
+    stereo = fr_ps.stereo;
+
+    error_protection = pInfo->error_protection;
+
+    if (pInfo->lay != 3)
+	{
+		char lpszError[255];
+		sprintf(lpszError,"Invalid pInfo->Lay value (=%d), it shoud be 3\n",pInfo->lay);
+		OutputDebugString(lpszError);
+		return BE_ERR_INVALID_FORMAT_PARAMETERS;
+    }
+
+	// Set number of input samples depending on the number of samples
+	*dwSamples=(pInfo->version==MPEG2)?1152:2304;
+
+	*dwSamples=(DWORD)(resample_ratio* *dwSamples);
+	if ((pInfo->mode)== 3)
+	{
+		*dwSamples/=2;
+	}
+
+
+	// Set the input sample buffer size, so we know what we can expect
+	dwSampleBufferSize=*dwSamples;
+
+#ifdef _DEBUGDLL
+	dump_config(&fr_ps,&nPsychoModel,original_file_name,encoded_file_name);
+#endif
+
+	// Everything went OK, thus return SUCCESSFUL
+	return BE_ERR_SUCCESSFUL;
+}

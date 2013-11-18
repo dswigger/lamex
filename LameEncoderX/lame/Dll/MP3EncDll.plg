@@ -1,0 +1,102 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MP3EncDll - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\TEMP\RSP21B.tmp" with contents
+[
+/nologo /Zp2 /MT /W3 /GX /Ox /Ot /Og /Ob2 /I "..\\" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_BLADEDLL" /Fp"Release/MP3EncDll.pch" /YX /Fo"Release/" /Fd"Release/" /FD -Qmem -Qip /c 
+"F:\Development\Projects\LameX\LameEncoderX\lame\Dll\BladeMP3EncDLL.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\brhist.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\fft.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\formatBitstream.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\gpkplotting.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\gtkanal.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\id3tag.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\ieeefloat.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\l3bitstream.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\lame.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\newmdct.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\parse.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\portableio.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\psymodel.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\quantize-pvt.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\quantize.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\reservoir.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\tables.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\timestatus.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\takehiro.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\util.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\VbrTag.c"
+"F:\Development\Projects\LameX\LameEncoderX\lame\version.c"
+]
+Creating command line "cl.exe @D:\TEMP\RSP21B.tmp" 
+Creating temporary file "D:\TEMP\RSP21C.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/lame_enc.pdb" /map:"Release/lame_enc.map" /machine:I386 /def:".\BladeMP3EncDLL.def" /out:"..\..\lame_enc.dll" /implib:"Release/lame_enc.lib" 
+.\Release\BladeMP3EncDLL.obj
+.\Release\brhist.obj
+.\Release\fft.obj
+.\Release\formatBitstream.obj
+.\Release\gpkplotting.obj
+.\Release\gtkanal.obj
+.\Release\id3tag.obj
+.\Release\ieeefloat.obj
+.\Release\l3bitstream.obj
+.\Release\lame.obj
+.\Release\newmdct.obj
+.\Release\parse.obj
+.\Release\portableio.obj
+.\Release\psymodel.obj
+".\Release\quantize-pvt.obj"
+.\Release\quantize.obj
+.\Release\reservoir.obj
+.\Release\tables.obj
+.\Release\timestatus.obj
+.\Release\takehiro.obj
+.\Release\util.obj
+.\Release\VbrTag.obj
+.\Release\version.obj
+]
+Creating command line "link.exe @D:\TEMP\RSP21C.tmp"
+<h3>Output Window</h3>
+Compiling...
+Command line warning D4002 : ignoring unknown option '-Qmem'
+Command line warning D4002 : ignoring unknown option '-Qip'
+BladeMP3EncDLL.c
+brhist.c
+fft.c
+formatBitstream.c
+gpkplotting.c
+gtkanal.c
+id3tag.c
+ieeefloat.c
+l3bitstream.c
+lame.c
+newmdct.c
+parse.c
+portableio.c
+psymodel.c
+quantize-pvt.c
+quantize.c
+reservoir.c
+tables.c
+timestatus.c
+takehiro.c
+F:\Development\Projects\LameX\LameEncoderX\lame\takehiro.c(700) : warning C4018: '<' : signed/unsigned mismatch
+util.c
+VbrTag.c
+version.c
+Linking...
+   Creating library Release/lame_enc.lib and object Release/lame_enc.exp
+
+
+
+<h3>Results</h3>
+lame_enc.dll - 0 error(s), 3 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,106 @@
+// LameEncoderX.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (LameEncoderX.tlb) that will become a resource in
+// LameEncoderX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(F1253762-C467-11D3-8290-0080C605ADA4), version(1.0),
+  helpfile("LameEncoderX.hlp"),
+  helpstring("LameEncoderX ActiveX Control module"),
+  control ]
+library LAMEENCODERXLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CLameEncoderXCtrl
+
+	[ uuid(F1253763-C467-11D3-8290-0080C605ADA4),
+	  helpstring("Dispatch interface for LameEncoderX Control"), hidden ]
+	dispinterface _DLameEncoderX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CLameEncoderXCtrl)
+			[id(1)] BSTR InputFile;
+			[id(2)] BSTR OutputFile;
+			[id(3)] long EncodingPriority;
+			[id(4)] long Mode;
+			[id(5)] long Bitrate;
+			[id(6)] float SamplingFreq;
+			[id(7)] boolean VoiceMode;
+			[id(8)] boolean UseVBR;
+			[id(9)] long VBRQuality;
+			[id(10)] long MinimumBitrate;
+			[id(11)] long MaximumBitrate;
+			[id(12)] boolean DisableVBRInfoTag;
+			[id(13)] boolean UseQualityImprovements;
+			[id(14)] boolean UseFastMode;
+			[id(15)] boolean DisableSFBCutoff;
+			[id(16)] boolean AllowChanDifBlockTypes;
+			[id(17)] boolean OnlyATHForMasking;
+			[id(18)] boolean NoShortBlocks;
+			[id(19)] boolean InputIsRawPCM;
+			[id(20)] boolean ForceByteSwab;
+			[id(21)] boolean DownmixToMono;
+			[id(22)] boolean ErrorProtection;
+			[id(23)] boolean MarkAsCopyrighted;
+			[id(24)] boolean MarkAsNonOriginal;
+			[id(25)] BSTR Title;
+			[id(26)] BSTR Artist;
+			[id(27)] BSTR Album;
+			[id(28)] BSTR Year;
+			[id(29)] BSTR Comment;
+			[id(30)] BSTR Genre;
+			[id(31)] float ResampleFreq;
+			[id(32)] float EnoderXVersion;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CLameEncoderXCtrl)
+			[id(33)] boolean StartEncode();
+			[id(34)] BSTR GetCurrentCommandString();
+			[id(35)] void SetAllDefaultParams();
+			[id(36)] BSTR GetTotalEncodingTime();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CLameEncoderXCtrl
+
+	[ uuid(F1253764-C467-11D3-8290-0080C605ADA4),
+	  helpstring("Event interface for LameEncoderX Control") ]
+	dispinterface _DLameEncoderXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CLameEncoderXCtrl)
+			[id(1)] void PercentComplete(long lPercent, long lSample);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CLameEncoderXCtrl
+
+	[ uuid(CEA71983-C458-11D3-8290-0080C605ADA4),
+	  helpstring("LameEncoderX Control"), control ]
+	coclass LameEncoderX
+	{
+		[default] dispinterface _DLameEncoderX;
+		[default, source] dispinterface _DLameEncoderXEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

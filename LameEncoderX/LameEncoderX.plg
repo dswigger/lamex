@@ -1,0 +1,68 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: LameEncoderX - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\TEMP\RSP2A1.tmp" with contents
+[
+/nologo /Zp2 /MD /GX /Og /Ob2 /I "lame" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "_BLADEDLL" /Fp"Release/LameEncoderX.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"F:\Development\Projects\LameX\LameEncoderX\LameEncoderXCtl.cpp"
+]
+Creating command line "cl.exe @D:\TEMP\RSP2A1.tmp" 
+Creating temporary file "D:\TEMP\RSP2A2.tmp" with contents
+[
+mfcs42.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/LameEncoderX.pdb" /machine:I386 /nodefaultlib:"mfcs42.lib" /def:".\LameEncoderX.def" /out:"Release/LameEncoderX.ocx" /implib:"Release/LameEncoderX.lib" 
+.\Release\LameEncoderX.obj
+.\Release\LameEncoderXCtl.obj
+.\Release\LameEncoderXPpg.obj
+.\Release\StdAfx.obj
+.\Release\LameEncoderX.res
+.\Release\version.obj
+.\Release\fft.obj
+.\Release\formatBitstream.obj
+.\Release\gpkplotting.obj
+.\Release\gtkanal.obj
+.\Release\id3tag.obj
+.\Release\ieeefloat.obj
+.\Release\l3bitstream.obj
+.\Release\lame.obj
+.\Release\newmdct.obj
+.\Release\parse.obj
+.\Release\portableio.obj
+.\Release\psymodel.obj
+.\Release\quantize.obj
+".\Release\quantize-pvt.obj"
+.\Release\reservoir.obj
+.\Release\tables.obj
+.\Release\takehiro.obj
+.\Release\timestatus.obj
+.\Release\util.obj
+.\Release\VbrTag.obj
+.\Release\brhist.obj
+.\Release\BladeMP3EncDLLX.obj
+]
+Creating command line "link.exe @D:\TEMP\RSP2A2.tmp"
+Creating temporary file "D:\TEMP\RSP2A3.bat" with contents
+[
+@echo off
+regsvr32 /s /c ".\Release\LameEncoderX.ocx"
+echo regsvr32 exec. time > ".\Release\regsvr32.trg"
+]
+Creating command line "D:\TEMP\RSP2A3.bat"
+Compiling...
+LameEncoderXCtl.cpp
+Linking...
+   Creating library Release/LameEncoderX.lib and object Release/LameEncoderX.exp
+<h3>Output Window</h3>
+Registering ActiveX Control...
+
+
+
+<h3>Results</h3>
+LameEncoderX.ocx - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
